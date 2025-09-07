@@ -5,7 +5,7 @@ llms:
   default_llm:
     _type: openai
     model_name: "qwen3-235b-a22b-thinking-2507"
-    api_key: "sk-518dd052d0de4ac08d0b1a3c321e3541"
+    api_key: ""
     base_url: "https://dashscope.aliyuncs.com/compatible-mode/v1"
     temperature: 0.7
     max_tokens: 2048
@@ -13,7 +13,7 @@ llms:
   coding_llm:
     _type: openai
     model_name: "qwen-plus"
-    api_key: "sk-518dd052d0de4ac08d0b1a3c321e3541"
+    api_key: ""
     base_url: "https://dashscope.aliyuncs.com/compatible-mode/v1"
     temperature: 0.7
     max_tokens: 2048
@@ -43,7 +43,7 @@ functions:
     _type: news_summary
     description: "Use this tool to get the latest news, and summarize the news in a concise manner."
     per_page: 10
-    api_key: "api_live_aehHmeSpGJsWqYeWeD47F72bVTfUNPH6adfHC4BdT9"
+    api_key: ""
 
 workflow:
   _type: react_agent
