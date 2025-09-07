@@ -5,4 +5,6 @@
 第148行需要配置apitube的api，本项目使用apitube进行获取每日新闻信息，apitube免费api申请地址：https://apitube.io/  
 第177行需要配置tavily搜索api  
 
-install完成后进入Integrated agent文件夹运行start.bat文件即可运行项目
+install完成后进入Integrated agent文件夹运行start.bat文件即可运行项目  
+
+项目基于Nvidia-Nemo agent toolkit项目完成 项目地址：https://github.com/NVIDIA/NeMo-Agent-Toolkit
