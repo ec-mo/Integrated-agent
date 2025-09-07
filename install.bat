@@ -68,7 +68,7 @@ if not exist "Integrated_agent" (
     git submodule update --init --recursive
 ) else (
     echo 项目目录已存在，进入目录...
-    cd NeMo-Agent-Toolkit
+    cd Integrated_agent
 )
 
 REM 创建Python虚拟环境
