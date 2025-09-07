@@ -5,7 +5,7 @@ echo 🚀 启动 Integrated agent AI对话机器人
 echo ==============================================
 
 REM 设置环境变量
-set TAVILY_API_KEY=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
+set TAVILY_API_KEY=
 
 REM 激活Python虚拟环境
 call .venv\Scripts\activate.bat
