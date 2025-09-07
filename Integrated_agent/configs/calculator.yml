@@ -1,0 +1,46 @@
+
+
+general:
+  use_uvloop: true
+
+functions:
+  calculator_multiply:
+    _type: calculator_multiply
+    description: "Useful to multiply two numbers. You must only use this tool for multiplication operations"
+
+  calculator_inequality:
+    _type: calculator_inequality
+    description: "Useful to compare two numbers. You must only use this tool for inequality operations"
+
+  calculator_divide:
+    _type: nat_simple_calculator/calculator_divide
+    description: "Useful to divide two numbers. You must only use this tool for division operations"
+
+  current_datetime:
+    _type: current_datetime
+    description: "获取当前日期和时间"
+
+  calculator_subtract:
+    _type: calculator_subtract
+    description: "Useful to subtract two numbers. You must only use this tool for subtraction operations"
+
+llms:
+  default_llm:
+    _type: openai
+    model_name: "qwen3-235b-a22b-thinking-2507"
+    api_key: "sk-518dd052d0de4ac08d0b1a3c321e3541"
+    base_url: "https://dashscope.aliyuncs.com/compatible-mode/v1"
+    temperature: 0.7
+    max_tokens: 2048
+
+workflow:
+  _type: react_agent
+  tool_names:
+    - calculator_multiply
+    - calculator_inequality
+    - current_datetime
+    - calculator_divide
+    - calculator_subtract
+  llm_name: default_llm
+  verbose: true
+  parse_agent_response_max_retries: 3

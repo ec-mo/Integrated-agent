@@ -1,0 +1,59 @@
+general:
+  use_uvloop: true
+
+llms:
+  default_llm:
+    _type: openai
+    model_name: "qwen3-235b-a22b-thinking-2507"
+    api_key: "sk-518dd052d0de4ac08d0b1a3c321e3541"
+    base_url: "https://dashscope.aliyuncs.com/compatible-mode/v1"
+    temperature: 0.7
+    max_tokens: 2048
+
+  coding_llm:
+    _type: openai
+    model_name: "qwen-plus"
+    api_key: "sk-518dd052d0de4ac08d0b1a3c321e3541"
+    base_url: "https://dashscope.aliyuncs.com/compatible-mode/v1"
+    temperature: 0.7
+    max_tokens: 2048
+
+functions:
+  tavily_search:
+    _type: tavily_internet_search
+    description: "使用Tavily API进行实时网络搜索"
+
+  current_datetime:
+    _type: current_datetime
+    description: "获取当前日期和时间"
+
+  code_generation:
+    _type: code_generation
+    programming_language: "Python"
+    description: "Useful to generate Python code. For any questions about code generation, you must only use this tool"
+    llm_name: coding_llm
+    verbose: true
+
+  wikipedia_search:
+    _type: wiki_search
+    description: "Useful for when you need to look up information on Wikipedia."
+    max_results: 3
+  
+  news_summary:
+    _type: news_summary
+    description: "Use this tool to get the latest news, and summarize the news in a concise manner."
+    per_page: 10
+    api_key: "api_live_aehHmeSpGJsWqYeWeD47F72bVTfUNPH6adfHC4BdT9"
+
+workflow:
+  _type: react_agent
+  tool_names:
+    - tavily_search
+    - current_datetime
+    - code_generation
+    - wikipedia_search
+    - news_summary
+  llm_name: default_llm
+  verbose: true
+  parse_agent_response_max_retries: 3
+  max_iterations: 10
